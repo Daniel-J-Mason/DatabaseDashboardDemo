@@ -1,0 +1,14 @@
+use:
+mvn spring-boot:run -Dspring.profiles.active=firstTest
+
+Above doesnt seem to work, go to run, edit configuration, drop down add vm options and then
+-Dspring.profiles.active=firstTest
+
+To create a .war to run on an application server just make your main application extend SpringBootServletInitializer
+Alt+insert configure
+
+Add 		<dependency>
+    			<groupId>org.springframework.boot</groupId>
+    			<artifactId>spring-boot-starter-tomcat</artifactId>
+    		</dependency>
+ and then run mvn package (make sure snapshot profile underneath has <package>war</package>

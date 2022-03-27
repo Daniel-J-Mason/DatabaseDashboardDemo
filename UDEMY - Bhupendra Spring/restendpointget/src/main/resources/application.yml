@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: secondary
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    daniel.in.resendpointget: INFO
+  file:
+    name:
+      logging.log
+
+---
+spring:
+  config:
+    activate:
+      on-profile: yaml
+
+default:
+  course:
+    name: Daniel's Yaml Test Class
+    chapterCount: 1
+course:
+  name: Yaml Course
+  chapterCount: 4
+  rating: 5
+  author: Daniel M.
+---
+spring:
+  config:
+    activate:
+      on-profile: secondary
+
+default:
+  course:
+    name: Daniel's Yaml Test Class Two
+    chapterCount: 2
+
+course:
+  name: Yaml Second Course
+  chapterCount: 4
+  rating: 5
+  author: Daniel M.
